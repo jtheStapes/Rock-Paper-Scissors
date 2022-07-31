@@ -5,4 +5,10 @@ function getComputerChoice() {
     return choice;
 }
 
+function playerChoice() {
+    let answer = prompt('Rock, Paper, or Scissors: ').toLowerCase();
+
+    return answer;
+}
+console.log(playerChoice());
 console.log(getComputerChoice());
