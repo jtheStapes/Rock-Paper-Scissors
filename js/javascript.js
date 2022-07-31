@@ -37,20 +37,22 @@ function playRound(playerSelection, computerSelection) {
 
 //Write a function that will play five rounds of Rock Paper Scissors that keeps score and reports a winner or loser at the end.
 function game() {
-    for (let i = 0; i < 5; i++) {
+    let keepGoing = true;
+    while (keepGoing) {
         //Ask the user a message and store it in playerSelection
         let playerSelection = prompt('Rock, Paper, or Scissors: ').toLowerCase();
         //Create a variable called computerSelection of type string that holds the randomly answer
         let computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
+        if (userPoints === 5 || computerPoints === 5) {
+            keepGoing = false;
+        }
     }
     if (userPoints > computerPoints) {
         return `User scored ${userPoints} and the computer scored ${computerPoints}! You won the game!`;
-    } else if (userPoints < computerPoints) {
-        return `User scored ${userPoints} and the computer scored ${computerPoints}! You lost the game!`;
     } else {
-        return `User scored ${userPoints} and the computer scored ${computerPoints}! You tied the game!`;
-    }
+        return `User scored ${userPoints} and the computer scored ${computerPoints}! You lost the game!`;
+    } 
 }   
 
 console.log(game());
