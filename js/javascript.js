@@ -9,36 +9,77 @@ function getComputerChoice() {
 let userPoints = 0; //Create a variable to keep track of user points
 let computerPoints = 0; //Create a variable to keep track of computer points
 const container = document.querySelector('#container');
-const results = document.createElement('div'); //Add a div for displaying results
-results.classList.add('results');
+const score = document.createElement('div'); //Add a div for displaying results
+score.classList.add('score');
+const result = document.createElement('div');
+result.classList.add('result');
 
 //Add event listener to buttons for each move
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
-    results.textContent = playRound(playerSelection, computerSelection);
+    score.textContent = playRound(playerSelection, computerSelection);
+    if (userPoints === 5) {
+        result.textContent = 'You won!!!';
+        container.appendChild(result);
+        userPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints === 5) {
+        result.textContent = 'You lost!!!';
+        container.appendChild(result);
+        userPoints = 0;
+        computerPoints = 0;
+    }
+    console.log(userPoints);
 })
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
-    results.textContent = playRound(playerSelection, computerSelection);
+    score.textContent = playRound(playerSelection, computerSelection);
+    if (userPoints === 5) {
+        result.textContent = 'You won!!!';
+        container.appendChild(result);
+        userPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints === 5) {
+        result.textContent = 'You lost!!!';
+        container.appendChild(result);
+        userPoints = 0;
+        computerPoints = 0;
+    }
+    console.log(userPoints);
 })
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
-    results.textContent = playRound(playerSelection, computerSelection);
+    score.textContent = playRound(playerSelection, computerSelection);
+    if (userPoints === 5) {
+        result.textContent = 'You won!!!';
+        container.appendChild(result);
+        userPoints = 0;
+        computerPoints = 0;
+    } else if (computerPoints === 5) {
+        result.textContent = 'You lost!!!';
+        container.appendChild(result);
+        userPoints = 0;
+        computerPoints = 0;
+    }
+    console.log(userPoints);
 })
-console.log(userPoints);
-//if (userPoints < 5 || computerPoints < 5) {
-    container.appendChild(results);
-//}
+
+container.appendChild(score);
+
+
+
+
 
 function playRound(playerSelection, computerSelection) { //Write a function that takes in two parameters, playerSelection and computerSelection
+
     //Compare the two choices using if statements
     if (playerSelection === computerSelection) {
         return `You chose ${playerSelection} and the computer chose ${computerSelection}. You tied!`
