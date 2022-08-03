@@ -5,6 +5,10 @@ function getComputerChoice() {
 
     return choice;
 }
+//Add event listener to buttons for each move
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 //Create a variable to keep track of user points
 let userPoints = 0;
 //Create a variable to keep track of computer points
