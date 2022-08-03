@@ -17,6 +17,7 @@ result.classList.add('result');
 //Add event listener to buttons for each move
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
+    result.textContent = '';
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
     score.textContent = playRound(playerSelection, computerSelection);
@@ -36,6 +37,7 @@ rock.addEventListener('click', () => {
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
+    result.textContent = '';
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
     score.textContent = playRound(playerSelection, computerSelection);
@@ -55,6 +57,7 @@ paper.addEventListener('click', () => {
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
+    result.textContent = '';
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
     score.textContent = playRound(playerSelection, computerSelection);
