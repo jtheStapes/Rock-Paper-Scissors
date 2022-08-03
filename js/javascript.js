@@ -7,8 +7,25 @@ function getComputerChoice() {
 }
 //Add event listener to buttons for each move
 const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    let playerSelection = 'rock';
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+})
+
 const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    let playerSelection = 'paper';
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+})
+
 const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    let playerSelection = 'scissors';
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+})
 //Create a variable to keep track of user points
 let userPoints = 0;
 //Create a variable to keep track of computer points
@@ -40,7 +57,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 //Write a function that will play five rounds of Rock Paper Scissors that keeps score and reports a winner or loser at the end.
-function game() {
+/*function game() {
     let keepGoing = true;
     while (keepGoing) {
         //Ask the user a message and store it in playerSelection
@@ -57,6 +74,4 @@ function game() {
     } else {
         return `User scored ${userPoints} and the computer scored ${computerPoints}! You lost the game!`;
     } 
-}   
-
-console.log(game());
+} */  
