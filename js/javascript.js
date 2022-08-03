@@ -5,39 +5,46 @@ function getComputerChoice() {
 
     return choice;
 }
+
+let userPoints = 0; //Create a variable to keep track of user points
+let computerPoints = 0; //Create a variable to keep track of computer points
+const container = document.querySelector('#container');
+const results = document.createElement('div'); //Add a div for displaying results
+results.classList.add('results');
+
 //Add event listener to buttons for each move
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    results.textContent = playRound(playerSelection, computerSelection);
 })
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    results.textContent = playRound(playerSelection, computerSelection);
 })
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    results.textContent = playRound(playerSelection, computerSelection);
 })
-//Create a variable to keep track of user points
-let userPoints = 0;
-//Create a variable to keep track of computer points
-let computerPoints = 0;
-//Write a function that takes in two parameters, playerSelection and computerSelection
-function playRound(playerSelection, computerSelection) {
+console.log(userPoints);
+//if (userPoints < 5 || computerPoints < 5) {
+    container.appendChild(results);
+//}
+
+function playRound(playerSelection, computerSelection) { //Write a function that takes in two parameters, playerSelection and computerSelection
     //Compare the two choices using if statements
     if (playerSelection === computerSelection) {
         return `You chose ${playerSelection} and the computer chose ${computerSelection}. You tied!`
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         userPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You win!`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You win! User: ${userPoints} Computer: ${computerPoints}`
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerPoints++;
         return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lose!`
