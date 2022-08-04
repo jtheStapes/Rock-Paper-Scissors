@@ -19,13 +19,20 @@ const winner = document.createElement('div'); //Add a div for displaying the win
 winner.classList.add('winner');
 //const playAgain = document.querySelector('#play');
 
+/* document.addEventListener('click', (e) => {
+    if (!e.target.matches('.icons, .icons *')) {
+      return;
+    }
+    console.log('It works!');
+  }); */
+
 //Add event listener to buttons for each move
-const rock = document.querySelector('#rock');
+const rock = document.querySelector('.rock');
 rock.addEventListener('click', () => {
     winner.textContent = '';
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
@@ -41,12 +48,12 @@ rock.addEventListener('click', () => {
     }
 })
 
-const paper = document.querySelector('#paper');
+const paper = document.querySelector('.paper');
 paper.addEventListener('click', () => {
     winner.textContent = '';
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
@@ -62,12 +69,12 @@ paper.addEventListener('click', () => {
     }
 })
 
-const scissors = document.querySelector('#scissors');
+const scissors = document.querySelector('.scissors');
 scissors.addEventListener('click', () => {
     winner.textContent = '';
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
