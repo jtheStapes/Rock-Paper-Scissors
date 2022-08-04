@@ -1,18 +1,37 @@
 body {
+    background-color: black;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.body {
+    background-color: rgb(31, 52, 70);
+    flex: 1;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+
+
+h1, .rules {
+    color: rgb(227, 104, 231);
+}
+
 h1 {
+    font-size: 72px;
+    margin-top: auto;
+    padding: 50px;
     text-align: center;
+    background-color: rgb(87, 75, 75);
 }
 
 .rules {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -20,14 +39,27 @@ h1 {
 
 .container {
     display: flex;
+    flex: 1;
     justify-content: center;
 }
 
 .icons {
+    background-color: rgb(31, 52, 70);
+    flex: 1;
+    color: rgb(103, 70, 134);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
 }
 
 .rock, .paper, .scissors {
+    font-size: 150px;
+    background-color: rgb(235, 235, 139);
     display: flex;
+    border: 2px solid rgb(218, 150, 150);
+    border-radius: 25px;
+    padding: 16px;
+    
 }
