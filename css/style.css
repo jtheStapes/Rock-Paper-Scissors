@@ -18,10 +18,12 @@ body {
 
 
 h1, .rules {
-    color: rgb(227, 104, 231);
+    color: rgb(228, 198, 230);
+    
 }
 
 h1 {
+    font-family: fantasy;
     font-size: 72px;
     margin-top: auto;
     padding: 50px;
@@ -30,18 +32,21 @@ h1 {
 }
 
 .rules {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 28px;
+    font-size: 42px;
     flex-wrap: wrap;
-    margin-left: 700px;
-    margin-right: 700px;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-bottom: 100px;
 }
 
 .rules-info {
+    font-size: 36px;
     display: flex;
     justify-content: center;
     align-self: center;
