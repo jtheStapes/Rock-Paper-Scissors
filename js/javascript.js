@@ -9,13 +9,33 @@ let userPoints = 0; //Create a variable to keep track of user points
 let computerPoints = 0; //Create a variable to keep track of computer points
 const container = document.querySelector('#container');
 const results = document.querySelector('#results');
+/*
+const rockIcon = document.createElement('i'); //Rock icon
+const rockChoice = document.createElement('div'); //Create div class for rock icon choice
+const paperChoice = document.createElement('div'); //Create div class for paper icon choice
+const scissorsChoice = document.createElement('div'); //Create div class for scissors icon choice
+*/
 const choice = document.createElement('div'); //Create container for icon of choice
 const userChoice = document.createElement('div'); //Create div for user icon choice
 const computerChoice = document.createElement('div'); //Create div for computer icon choice
 const scores = document.createElement('div'); //Create div class for scores
 const userScore = document.createElement('div'); //Add a div for displaying user score
 const computerScore = document.createElement('div'); //Add a div for displaying computer score
+
 choice.classList.add('choice');
+/*
+rockChoice.classList.add('rockChoice');
+paperChoice.classList.add('paperChoice');
+scissorsChoice.classList.add('scissorsChoice');
+rockIcon.classList.add('fa-solid fa-hand-back-fist');
+choice.appendChild(rockChoice);
+choice.appendChild(paperChoice);
+choice.appendChild(scissorsChoice);
+rockChoice.appendChild(rockIcon);
+*/
+
+//paperChoice.classList.add('paperChoice');
+//scissorsChoice.classList.add('scissorsChoice');
 scores.classList.add('scores');
 userScore.classList.add('userScore');
 userScore.textContent = 'User: ';
@@ -35,10 +55,11 @@ winner.classList.add('winner');
 //Add event listener to buttons for each move
 const rock = document.querySelector('.rock');
 rock.addEventListener('click', () => {
+    userChoice.textContent = '';
     winner.textContent = '';
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    userChoice.textContent = `${(playRound(playerSelection, computerSelection))}`;
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
@@ -56,10 +77,11 @@ rock.addEventListener('click', () => {
 
 const paper = document.querySelector('.paper');
 paper.addEventListener('click', () => {
+    userChoice.textContent = '';
     winner.textContent = '';
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    userChoice.textContent = `${(playRound(playerSelection, computerSelection))}`;
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
@@ -77,10 +99,11 @@ paper.addEventListener('click', () => {
 
 const scissors = document.querySelector('.scissors');
 scissors.addEventListener('click', () => {
+    userChoice.textContent = '';
     winner.textContent = '';
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    userChoice.textContent = `${(playRound(playerSelection, computerSelection))}`;
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
@@ -108,25 +131,25 @@ scores.appendChild(computerScore);
 function playRound(playerSelection, computerSelection) { //Write a function that takes in two parameters, playerSelection and computerSelection
     //Compare the two choices using if statements
     if (playerSelection === computerSelection) {
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You tied the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You tied the round!`
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         userPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You won the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You won the round!`
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         computerPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost the round!`
     } else if (playerSelection === 'paper' && computerSelection === 'scissors'){
         computerPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost the round!`
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         userPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You won the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You won the round!`
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         computerPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You lost the round!`
     } else {
         userPoints++;
-        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You won the round! User: ${userPoints} Computer: ${computerPoints}`
+        return `You chose ${playerSelection} and the computer chose ${computerSelection}. You won the round!`
     }
 }
 
