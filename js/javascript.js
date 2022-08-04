@@ -9,8 +9,14 @@ let userPoints = 0; //Create a variable to keep track of user points
 let computerPoints = 0; //Create a variable to keep track of computer points
 const container = document.querySelector('#container');
 const results = document.querySelector('#results');
+const choice = document.createElement('div'); //Create container for icon of choice
+const userChoice = document.createElement('div'); //Create div for user icon choice
+const computerChoice = document.createElement('div'); //Create div for computer icon choice
+const scores = document.createElement('div'); //Create div class for scores
 const userScore = document.createElement('div'); //Add a div for displaying user score
 const computerScore = document.createElement('div'); //Add a div for displaying computer score
+choice.classList.add('choice');
+scores.classList.add('scores');
 userScore.classList.add('userScore');
 userScore.textContent = 'User: ';
 computerScore.classList.add('computerScore');
@@ -89,9 +95,14 @@ scissors.addEventListener('click', () => {
         computerPoints = 0;
     }
 })
+
 container.appendChild(results);
-results.appendChild(userScore);
-results.appendChild(computerScore);
+choice.appendChild(userChoice);
+choice.appendChild(computerChoice);
+results.appendChild(choice);
+results.appendChild(scores);
+scores.appendChild(userScore);
+scores.appendChild(computerScore);
 //results.appendChild(winner);
 
 function playRound(playerSelection, computerSelection) { //Write a function that takes in two parameters, playerSelection and computerSelection
