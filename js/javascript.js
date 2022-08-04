@@ -7,8 +7,8 @@ function getComputerChoice() {
 
 let userPoints = 0; //Create a variable to keep track of user points
 let computerPoints = 0; //Create a variable to keep track of computer points
-const container = document.querySelector('#container');
-const results = document.querySelector('#results');
+const container = document.querySelector('.container');
+const results = document.querySelector('.results');
 /*
 const rockIcon = document.createElement('i'); //Rock icon
 const rockChoice = document.createElement('div'); //Create div class for rock icon choice
