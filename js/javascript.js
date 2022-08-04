@@ -8,32 +8,34 @@ function getComputerChoice() {
 let userPoints = 0; //Create a variable to keep track of user points
 let computerPoints = 0; //Create a variable to keep track of computer points
 const container = document.querySelector('#container');
+const results = document.querySelector('#results');
 const userScore = document.createElement('div'); //Add a div for displaying user score
 const computerScore = document.createElement('div'); //Add a div for displaying computer score
 userScore.classList.add('userScore');
 userScore.textContent = 'User: ';
 computerScore.classList.add('computerScore');
 computerScore.textContent = 'Computer: ';
-const result = document.createElement('div'); //Add a div for displaying the winner of the game
-result.classList.add('result');
+const winner = document.createElement('div'); //Add a div for displaying the winner of the game
+winner.classList.add('winner');
+//const playAgain = document.querySelector('#play');
 
 //Add event listener to buttons for each move
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
-    result.textContent = '';
+    winner.textContent = '';
     let playerSelection = 'rock';
     let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
-        result.textContent = 'You won the game!!!';
-        container.appendChild(result);
+        winner.textContent = 'You won the game!!!';
+        results.appendChild(winner);
         userPoints = 0;
         computerPoints = 0;
     } else if (computerPoints === 5) {
-        result.textContent = 'You lost the game...';
-        container.appendChild(result);
+        winner.textContent = 'You lost the game...';
+        results.appendChild(winner);
         userPoints = 0;
         computerPoints = 0;
     }
@@ -41,20 +43,20 @@ rock.addEventListener('click', () => {
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
-    result.textContent = '';
+    winner.textContent = '';
     let playerSelection = 'paper';
     let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
-        result.textContent = 'You won the game!!!';
-        container.appendChild(result);
+        winner.textContent = 'You won the game!!!';
+        results.appendChild(winner);
         userPoints = 0;
         computerPoints = 0;
     } else if (computerPoints === 5) {
-        result.textContent = 'You lost the game...';
-        container.appendChild(result);
+        winner.textContent = 'You lost the game...';
+        results.appendChild(winner);
         userPoints = 0;
         computerPoints = 0;
     }
@@ -62,26 +64,28 @@ paper.addEventListener('click', () => {
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
-    result.textContent = '';
+    winner.textContent = '';
     let playerSelection = 'scissors';
     let computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
     userScore.textContent = `User: ${userPoints}`;
     computerScore.textContent = `Computer: ${computerPoints}`;
     if (userPoints === 5) {
-        result.textContent = 'You won the game!!!';
-        container.appendChild(result);
+        winner.textContent = 'You won the game!!!';
+        results.appendChild(winner);
         userPoints = 0;
         computerPoints = 0;
     } else if (computerPoints === 5) {
-        result.textContent = 'You lost the game...';
-        container.appendChild(result);
+        winner.textContent = 'You lost the game...';
+        results.appendChild(winner);
         userPoints = 0;
         computerPoints = 0;
     }
 })
-container.appendChild(userScore);
-container.appendChild(computerScore);
+container.appendChild(results);
+results.appendChild(userScore);
+results.appendChild(computerScore);
+//results.appendChild(winner);
 
 function playRound(playerSelection, computerSelection) { //Write a function that takes in two parameters, playerSelection and computerSelection
     //Compare the two choices using if statements
