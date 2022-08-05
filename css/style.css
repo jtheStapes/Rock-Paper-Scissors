@@ -1,5 +1,4 @@
 body {
-    background-color: black;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -11,8 +10,6 @@ body {
 .body {
     background-color: rgb(31, 52, 70);
     flex: 1;
-    margin-left: 200px;
-    margin-right: 200px;
 }
 
 
