@@ -1,1 +1,3 @@
 My first JavaScript program built from scratch that plays the popular game "Rock Paper Scissors" against the computer by randomly generating the computer's move. The game is played from the console and the first one to five points wins. Enjoy!
+
+Update: My Rock Paper Scissors game now has a UI that has buttons to click for user selections rather than typing in the selection. I also styled up the webpage to make it look better.
