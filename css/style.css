@@ -17,7 +17,7 @@ body {
 
 
 
-h1, .rules {
+h1, .rules, .scores, .choice, .winner {
     color: rgb(228, 198, 230);
     
 }
@@ -31,6 +31,23 @@ h1 {
     background-color: rgb(53, 52, 52);
 }
 
+.scores {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.userScore, .computerScore {
+    display: flex;
+    margin: 100px;
+}
+
+.choice, .winner {
+    display: flex;
+    justify-content: center;
+}
+
 .rules {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
@@ -39,9 +56,6 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 42px;
-    flex-wrap: wrap;
-    margin-left: 600px;
-    margin-right: 600px;
     margin-bottom: 100px;
 }
 
@@ -66,7 +80,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .rock, .paper, .scissors {
