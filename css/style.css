@@ -23,9 +23,9 @@ h1, .rules, .scores, .choice, .winner {
 }
 
 h1 {
-    font-family: fantasy;
-    font-size: 72px;
     margin-top: auto;
+    font-family: fantasy;
+    font-size: 125px;
     padding: 50px;
     text-align: center;
     background-color: rgb(53, 52, 52);
@@ -34,8 +34,6 @@ h1 {
 .scores {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
 }
 
 .userScore, .computerScore {
@@ -55,7 +53,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 42px;
+    font-size: 75px;
     margin-bottom: 100px;
 }
 
@@ -68,6 +66,7 @@ h1 {
 
 .container {
     display: flex;
+    font-size: 28px;
     flex: 1;
     justify-content: center;
 }
