@@ -15,7 +15,7 @@ body {
 .body {
     display: flex;
     flex-direction: column;
-    flex: 2;
+    flex: 4;
 }
 
 .rules {
@@ -24,7 +24,7 @@ body {
     justify-content: center;
     color: aliceblue;
     font-size: 28px;
-    gap: 24px;
+    gap: 16px;
 }
 
 .water {
@@ -45,19 +45,24 @@ body {
 
 .element-rules {
     display: flex;
+    flex: 1;
     justify-content: center;
     gap: 8px;
 }
 
 .game-rules {
-    margin: 0px 400px 0px 400px;
+    display: flex;
     text-align: center;
     font-size: 36px;
 }
 
 .elements {
     display: flex;
+    flex: 1;
     justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    gap: 50px;
 }
 
 /*
