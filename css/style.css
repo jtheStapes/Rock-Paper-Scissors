@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex: 1;
     flex-direction: column;
+    background-color: rgb(48, 46, 46);
 }
 
 .header {
@@ -15,11 +15,16 @@ body {
 .body {
     display: flex;
     flex-direction: column;
+    flex: 2;
 }
 
 .rules {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    color: aliceblue;
+    font-size: 28px;
+    gap: 24px;
 }
 
 .water {
@@ -42,15 +47,17 @@ body {
     display: flex;
     justify-content: center;
     gap: 8px;
-    flex: 1;
 }
 
 .game-rules {
-    display: flex;
+    margin: 0px 400px 0px 400px;
+    text-align: center;
+    font-size: 36px;
 }
 
 .elements {
     display: flex;
+    justify-content: center;
 }
 
 /*
