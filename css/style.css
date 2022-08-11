@@ -3,7 +3,33 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex: 1;
     flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    font-size: 48px;
+}
+
+.water, .water-header {
+    color: aqua;
+}
+
+.earth, .earth-header {
+    color: brown;
+}
+
+.fire, .fire-header {
+    color: red;
+}
+
+.air, .air-header {
+    color: rgb(168, 168, 168);
+}
+
+.elements {
+    display: flex;
 }
 
 /*
