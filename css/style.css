@@ -61,8 +61,29 @@ body {
     flex: 1;
     justify-content: center;
     align-items: center;
-    font-size: 150px;
     gap: 50px;
+}
+
+button {
+    font-size: 150px;
+    background-color: transparent;
+    border-radius: 25px;
+}
+
+.elements > .fire {
+    border: 5px solid red;
+}
+
+.elements > .water {
+    border: 5px solid aqua;
+}
+
+.elements > .earth {
+    border: 5px solid brown;
+}
+
+.elements > .air {
+    border: 5px solid gray;
 }
 
 /*
