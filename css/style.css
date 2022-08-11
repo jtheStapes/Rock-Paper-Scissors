@@ -12,20 +12,41 @@ body {
     font-size: 48px;
 }
 
-.water, .water-header {
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.rules {
+    display: flex;
+    justify-content: center;
+}
+
+.water {
     color: aqua;
 }
 
-.earth, .earth-header {
+.earth {
     color: brown;
 }
 
-.fire, .fire-header {
+.fire {
     color: red;
 }
 
-.air, .air-header {
+.air {
     color: rgb(168, 168, 168);
+}
+
+.element-rules {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.game-rules {
+    display: flex;
 }
 
 .elements {
