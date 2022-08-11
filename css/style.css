@@ -4,9 +4,10 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
+/*
+***Commented below is my CSS from my first attempt at creating and styling the Rock Paper Scissors project***
 .body {
     background-color: rgb(31, 52, 70);
     flex: 1;
@@ -88,3 +89,4 @@ h1 {
     padding: 16px;
     
 }
+*/
