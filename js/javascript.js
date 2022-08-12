@@ -1,24 +1,95 @@
+//Variables and constants
 let userChoice;
-let computerChoice = getComputerChoice();
-const water = document.querySelector('.water-icon');
-const earth = document.querySelector('.earth-icon');
-const fire = document.querySelector('.fire-icon');
-const air = document.querySelector('.air-icon');
+let computerChoice;
+let userPoints = 0;
+let computerPoints = 0;
+let water = document.querySelector('.water-icon');
+let earth = document.querySelector('.earth-icon');
+let fire = document.querySelector('.fire-icon');
+let air = document.querySelector('.air-icon');
+const body = document.querySelector('.body');
 const results = document.createElement('div');
 const choice = document.createElement('div');
+const avatarChoice = document.createElement('div');
+const challengerChoice = document.createElement('div');
 const message = document.createElement('div');
+const winner = document.createElement('div');
+
+//Add class names to created divs
+results.classList.add('results');
+choice.classList.add('choice');
+avatarChoice.classList.add('avatarChoice');
+avatarChoice.textContent = `Avatar: `;
+challengerChoice.classList.add('challengerChoice');
+challengerChoice.textContent = `Challengers: `;
+message.classList.add('message');
+winner.classList.add('winner');
+
+//Add children to parent divs
+body.appendChild(results);
+body.appendChild(choice);
+results.appendChild(message);
+results.appendChild(choice);
+choice.appendChild(avatarChoice);
+choice.appendChild(challengerChoice);
+
+//Add event listeners to each button to record userChoice
+water.addEventListener('click', () => { 
+    userChoice = 'Water'; 
+    computerChoice = getComputerChoice();
+    avatarChoice.textContent += '🌊';
+    game();
+});
+earth.addEventListener('click', () => { 
+    userChoice = 'Earth';
+    computerChoice = getComputerChoice();
+    avatarChoice.textContent += earth;
+    game();
+});
+fire.addEventListener('click', () => { 
+    userChoice = 'Fire';
+    computerChoice = getComputerChoice();
+    avatarChoice.textContent += fire; 
+    game();
+});
+air.addEventListener('click', () => { 
+    userChoice = 'Air'; 
+    computerChoice = getComputerChoice();
+    avatarChoice.textContent += air;
+    game();
+});
 
 
-water.addEventListener('click', () => { userChoice = 'water'; });
-earth.addEventListener('click', () => { userChoice = 'earth'; });
-fire.addEventListener('click', () => { userChoice = 'fire'; });
-air.addEventListener('click', () => { userChoice = 'air'; });
-
-
-function getComputerChoice() { //Generate a randomly selected answer to Rock Paper Scissors
-    let options = ['water','earth', 'fire', 'air'];
+function getComputerChoice() { //Generate a randomly selected answer to Water Earth Fire Air
+    let options = ['Water','Earth', 'Fire', 'Air'];
     let choice = options[Math.floor(Math.random()*options.length)];
     return choice;
+}
+
+function game() {
+    message.textContent = '';
+    if 
+    ((userChoice === 'Water' && computerChoice === 'Fire') || 
+    (userChoice === 'Earth' && computerChoice === 'Air') ||
+    (userChoice === 'Fire' && computerChoice === 'Earth') ||
+    (userChoice === 'Air' && computerChoice === 'Water')) 
+    {
+        userPoints++;
+        avatarChoice.textContent = `Avatar: ${userPoints}`;
+        challengerChoice.textContent = `Challenger: ${computerPoints}`;
+        message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
+        if (userPoints === 5) 
+        {
+            winner.textContent = 'The Avatar wins!';
+        }
+    } else if 
+    ((computerChoice === 'Water' && userChoice === 'Fire') || 
+    (computerChoice === 'Earth' && userChoice === 'Air') ||
+    (computerChoice === 'Fire' && userChoice === 'Earth') ||
+    (computerChoice === 'Air' && userChoice === 'Water'))
+    {
+
+    }
 }
 
 // Commented below is my JavaScript from my first attempt at creating and styling the Rock Paper Scissors project
