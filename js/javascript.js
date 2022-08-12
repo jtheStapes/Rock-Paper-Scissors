@@ -7,6 +7,14 @@ let water = document.querySelector('.water-icon');
 let earth = document.querySelector('.earth-icon');
 let fire = document.querySelector('.fire-icon');
 let air = document.querySelector('.air-icon');
+const userWaterChoiceSymbol = document.createElement('div');
+userWaterChoiceSymbol.textContent = '🌊';
+const userEarthChoiceSymbol = document.createElement('div');
+userEarthChoiceSymbol.textContent = '⛰️';
+const userFireChoiceSymbol = document.createElement('div');
+userFireChoiceSymbol.textContent = '🔥';
+const userAirChoiceSymbol = document.createElement('div');
+userAirChoiceSymbol.textContent = '💨';
 const body = document.querySelector('.body');
 const results = document.createElement('div');
 const choice = document.createElement('div');
@@ -37,25 +45,25 @@ choice.appendChild(challengerChoice);
 water.addEventListener('click', () => { 
     userChoice = 'Water'; 
     computerChoice = getComputerChoice();
-    avatarChoice.textContent += '🌊';
+    avatarChoice.appendChild(userWaterChoiceSymbol);
     game();
 });
 earth.addEventListener('click', () => { 
     userChoice = 'Earth';
     computerChoice = getComputerChoice();
-    avatarChoice.textContent += earth;
+    avatarChoice.appendChild(userEarthChoiceSymbol);
     game();
 });
 fire.addEventListener('click', () => { 
     userChoice = 'Fire';
     computerChoice = getComputerChoice();
-    avatarChoice.textContent += fire; 
+    avatarChoice.appendChild(userFireChoiceSymbol); 
     game();
 });
 air.addEventListener('click', () => { 
     userChoice = 'Air'; 
     computerChoice = getComputerChoice();
-    avatarChoice.textContent += air;
+    avatarChoice.appendChild(userAirChoiceSymbol);
     game();
 });
 
