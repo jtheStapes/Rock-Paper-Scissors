@@ -17,7 +17,6 @@ const avatarScore = document.createElement('div');
 const challengerScore = document.createElement('div');
 const challengerChoice = document.createElement('div');
 const message = document.createElement('div');
-//const winner = document.createElement('div');
 
 //Add class names to created divs
 userChoiceHolder.classList.add('userChoiceHolder');
@@ -30,11 +29,9 @@ avatarChoice.classList.add('avatarChoice');
 challengerChoice.classList.add('challengerChoice');
 message.classList.add('message');
 message.textContent = '';
-//winner.classList.add('winner');
 
 //Add children to parent divs
 body.appendChild(results);
-//body.appendChild(winner);
 results.appendChild(message);
 results.appendChild(choice);
 choice.appendChild(avatarChoice);
@@ -43,36 +40,37 @@ avatarChoice.appendChild(userChoiceHolder);
 avatarChoice.appendChild(avatarScore);
 userChoiceHolder.textContent = '❓';
 avatarScore.textContent = `Avatar: ${userPoints}`;
-//avatarChoice.textContent = `Avatar: ${userPoints}`;
 challengerChoice.appendChild(computerChoiceHolder);
 challengerChoice.appendChild(challengerScore);
 computerChoiceHolder.textContent = '❓';
 challengerScore.textContent = `Challengers: ${computerPoints}`;
-//challengerChoice.textContent = `Challengers: ${computerPoints}`;
 
 //Add event listeners to each button to record userChoice
 water.addEventListener('click', () => { 
+    //getAvatarChoice();    
     userChoice = 'Water'; 
     computerChoice = getComputerChoice();
-    avatarChoice.appendChild(userWaterChoiceSymbol);
     game();
 });
 earth.addEventListener('click', () => { 
+    userChoiceHolder.textContent = '⛰️'
+    userChoiceHolder.setAttribute('style', 'color: rgb(185, 149, 115); border: 5px solid rgb(185, 149, 115);');
     userChoice = 'Earth';
     computerChoice = getComputerChoice();
-    avatarChoice.appendChild(userEarthChoiceSymbol);
     game();
 });
 fire.addEventListener('click', () => { 
+    userChoiceHolder.textContent = '🔥'
+    userChoiceHolder.setAttribute('style', 'color: rgb(247, 107, 107); border: 5px solid rgb(247, 107, 107);');
     userChoice = 'Fire';
-    computerChoice = getComputerChoice();
-    avatarChoice.appendChild(userFireChoiceSymbol); 
+    computerChoice = getComputerChoice(); 
     game();
 });
 air.addEventListener('click', () => { 
+    userChoiceHolder.textContent = '💨'
+    userChoiceHolder.setAttribute('style', 'color: rgb(255, 255, 255); border: 5px solid rgb(255, 255, 255);');
     userChoice = 'Air'; 
     computerChoice = getComputerChoice();
-    avatarChoice.appendChild(userAirChoiceSymbol);
     game();
 });
 
@@ -83,7 +81,30 @@ function getComputerChoice() { //Generate a randomly selected answer to Water Ea
     return choice;
 }
 
+function getAvatarChoice(userChoice) {
+    switch (userChoice) 
+    {
+        case('Water'):
+            userChoiceHolder.textContent = '🌊'
+            userChoiceHolder.setAttribute('style', 'color: rgb(24, 182, 255); border: 5px solid rgb(24, 182, 255);');
+            return userChoiceHolder;
+        case('Earth'):
+            userChoiceHolder.textContent = '⛰️'
+            userChoiceHolder.setAttribute('style', 'color: rgb(185, 149, 115); border: 5px solid rgb(185, 149, 115);');
+            return userChoiceHolder;
+        case('Fire'):
+            userChoiceHolder.textContent = '🔥'
+            userChoiceHolder.setAttribute('style', 'color: rgb(247, 107, 107); border: 5px solid rgb(247, 107, 107);');
+            return userChoiceHolder;
+        case('Air'):
+            userChoiceHolder.textContent = '💨'
+            userChoiceHolder.setAttribute('style', 'color: rgb(255, 255, 255); border: 5px solid rgb(255, 255, 255);');
+            return userChoiceHolder;
+        }
+}
+
 function game() {
+    getAvatarChoice(userChoice);
     message.textContent = '';
     if 
     ((userChoice === 'Water' && computerChoice === 'Fire') || 
@@ -91,14 +112,14 @@ function game() {
     (userChoice === 'Fire' && computerChoice === 'Earth') ||
     (userChoice === 'Air' && computerChoice === 'Water')) 
     {
-        userPoints++;
-        avatarChoice.textContent = `Avatar: ${userPoints}`;
-        challengerChoice.textContent = `Challenger: ${computerPoints}`;
-        message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
         if (userPoints === 5) 
         {
-            winner.textContent = 'The Avatar wins!';
+            message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`
         }
+        userPoints++;
+        avatarScore.textContent = `Avatar: ${userPoints}`;
+        challengerScore.textContent = `Challenger: ${computerPoints}`;
+        message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
     } else if 
     ((computerChoice === 'Water' && userChoice === 'Fire') || 
     (computerChoice === 'Earth' && userChoice === 'Air') ||
