@@ -1,9 +1,19 @@
 let userChoice;
 let computerChoice = getComputerChoice();
-const water = document.getElementsByClassName('water-icon');
-const earth = document.getElementsByClassName('earth-icon');
-const fire = document.getElementsByClassName('fire-icon');
-const air = document.getElementsByClassName('air-icon');
+const water = document.querySelector('.water-icon');
+const earth = document.querySelector('.earth-icon');
+const fire = document.querySelector('.fire-icon');
+const air = document.querySelector('.air-icon');
+const results = document.createElement('div');
+const choice = document.createElement('div');
+const message = document.createElement('div');
+
+
+water.addEventListener('click', () => { userChoice = 'water'; });
+earth.addEventListener('click', () => { userChoice = 'earth'; });
+fire.addEventListener('click', () => { userChoice = 'fire'; });
+air.addEventListener('click', () => { userChoice = 'air'; });
+
 
 function getComputerChoice() { //Generate a randomly selected answer to Rock Paper Scissors
     let options = ['water','earth', 'fire', 'air'];
