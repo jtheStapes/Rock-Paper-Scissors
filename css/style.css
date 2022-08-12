@@ -16,13 +16,15 @@ body {
     display: flex;
     flex-direction: column;
     flex: 4;
+    gap: 50px
 }
 
+/*
 .rules,
-.results,
-.winner {
+.results {
     flex: 1;
 }
+*/
 
 .rules {
     display: flex;
@@ -66,7 +68,6 @@ body {
 
 .elements {
     display: flex;
-    flex: 2;
     justify-content: center;
     align-items: flex-start;
     gap: 50px;
@@ -124,13 +125,16 @@ button {
 
 .results {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 4px;
 }
 
 .choice {
     display: flex;
+    flex: 3;
     justify-content: center;
     align-items: flex-start;
     width: 50%;
@@ -146,9 +150,29 @@ button {
     font-size: 30px;
     border: 5px solid black;
     border-radius: 15px;
-    flex: 4;
+    width: 50%;
     padding: 15px;
-    
+}
+
+.userChoiceHolder, 
+.computerChoiceHolder {
+    font-size: 150px;
+    text-align: center;
+    width: 170px;
+    height: 202px;
+    background-color: transparent;
+    border: 5px solid black;
+    border-radius: 25px;
+}
+
+.message {
+    display: flex;
+    flex: 1;
+    border: 5px solid black;
+    border-radius: 25px;
+    background-color: transparent;
+    text-align: center;
+    width: 50%;
 }
 
 /*
