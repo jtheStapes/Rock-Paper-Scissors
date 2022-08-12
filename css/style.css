@@ -22,25 +22,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: aliceblue;
-    font-size: 28px;
+    font-size: 36px;
     gap: 16px;
 }
 
 .water {
-    color: aqua;
+    color: rgb(0, 68, 255);
 }
 
 .earth {
-    color: brown;
+    color: rgb(80, 53, 28);
 }
 
 .fire {
-    color: red;
+    color: rgb(145, 18, 18);
 }
 
 .air {
-    color: rgb(168, 168, 168);
+    color: rgb(255, 255, 255);
 }
 
 .element-rules {
@@ -51,14 +52,16 @@ body {
 }
 
 .game-rules {
+    width: 85%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 36px;
 }
 
 .elements {
     display: flex;
-    flex: 1;
+    flex: 0.25;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -71,19 +74,47 @@ button {
 }
 
 .elements > .fire {
-    border: 5px solid red;
+    border: 5px solid rgb(145, 18, 18);
+}
+
+.elements > .fire:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    background-color: rgb(252, 66, 66);
+    box-shadow: 0 0 50px rgba(145, 18, 18, .5);
 }
 
 .elements > .water {
-    border: 5px solid aqua;
+    border: 5px solid rgb(0, 68, 255);
+}
+
+.elements > .water:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    background-color: rgb(18, 195, 240);
+    box-shadow: 0 0 50px rgba(0, 68, 255, .5);
 }
 
 .elements > .earth {
-    border: 5px solid brown;
+    border: 5px solid rgb(80, 53, 28);
+}
+
+.elements > .earth:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    background-color: rgb(158, 127, 91);
+    box-shadow: 0 0 50px rgba(80, 53, 28, .5);
 }
 
 .elements > .air {
-    border: 5px solid gray;
+    border: 5px solid white;
+}
+
+.elements > .air:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    background-color: rgb(100, 100, 100);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
 }
 
 /*
