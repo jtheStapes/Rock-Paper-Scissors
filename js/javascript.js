@@ -27,15 +27,15 @@ const winner = document.createElement('div');
 results.classList.add('results');
 choice.classList.add('choice');
 avatarChoice.classList.add('avatarChoice');
-avatarChoice.textContent = `Avatar: `;
+avatarChoice.textContent = `Avatar: ${userPoints}`;
 challengerChoice.classList.add('challengerChoice');
-challengerChoice.textContent = `Challengers: `;
+challengerChoice.textContent = `Challengers: ${computerPoints}`;
 message.classList.add('message');
 winner.classList.add('winner');
 
 //Add children to parent divs
 body.appendChild(results);
-body.appendChild(choice);
+body.appendChild(winner);
 results.appendChild(message);
 results.appendChild(choice);
 choice.appendChild(avatarChoice);

@@ -18,11 +18,17 @@ body {
     flex: 4;
 }
 
+.rules,
+.results,
+.winner {
+    flex: 1;
+}
+
 .rules {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color: aliceblue;
     font-size: 36px;
     gap: 16px;
@@ -45,25 +51,21 @@ body {
 }
 
 .element-rules {
-    display: flex;
-    flex: 1;
-    justify-content: center;
+    text-align: center;
+    width: 100%;
     gap: 8px;
 }
 
 .game-rules {
     width: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
 .elements {
     display: flex;
-    flex: 0.25;
+    flex: 2;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 50px;
 }
 
@@ -115,6 +117,33 @@ button {
     transform: scale(1.1);
     background-color: rgb(100, 100, 100);
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.choice {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+    gap: 8px;
+}
+
+.avatarChoice, .challengerChoice {
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    border: 5px solid black;
+    border-radius: 15px;
+    flex: 4;
+    flex-wrap: nowrap;
+    padding: 15px;
+    
 }
 
 /*
