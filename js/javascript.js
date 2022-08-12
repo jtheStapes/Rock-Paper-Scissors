@@ -17,7 +17,7 @@ const avatarScore = document.createElement('div');
 const challengerScore = document.createElement('div');
 const challengerChoice = document.createElement('div');
 const message = document.createElement('div');
-const winner = document.createElement('div');
+//const winner = document.createElement('div');
 
 //Add class names to created divs
 userChoiceHolder.classList.add('userChoiceHolder');
@@ -29,11 +29,12 @@ choice.classList.add('choice');
 avatarChoice.classList.add('avatarChoice');
 challengerChoice.classList.add('challengerChoice');
 message.classList.add('message');
-winner.classList.add('winner');
+message.textContent = '';
+//winner.classList.add('winner');
 
 //Add children to parent divs
 body.appendChild(results);
-body.appendChild(winner);
+//body.appendChild(winner);
 results.appendChild(message);
 results.appendChild(choice);
 choice.appendChild(avatarChoice);
