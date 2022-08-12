@@ -17,6 +17,7 @@ const avatarScore = document.createElement('div');
 const challengerScore = document.createElement('div');
 const challengerChoice = document.createElement('div');
 const message = document.createElement('div');
+const messageText = document.createElement('div');
 
 //Add class names to created divs
 userChoiceHolder.classList.add('userChoiceHolder');
@@ -28,12 +29,13 @@ choice.classList.add('choice');
 avatarChoice.classList.add('avatarChoice');
 challengerChoice.classList.add('challengerChoice');
 message.classList.add('message');
-message.textContent = '';
+messageText.classList.add('messageText');
 
 //Add children to parent divs
 body.appendChild(results);
 results.appendChild(message);
 results.appendChild(choice);
+message.appendChild(messageText);
 choice.appendChild(avatarChoice);
 choice.appendChild(challengerChoice);
 avatarChoice.appendChild(userChoiceHolder);
@@ -105,7 +107,7 @@ function getAvatarChoice(userChoice) {
 
 function game() {
     getAvatarChoice(userChoice);
-    message.textContent = '';
+    messageText.textContent = '';
     if 
     ((userChoice === 'Water' && computerChoice === 'Fire') || 
     (userChoice === 'Earth' && computerChoice === 'Air') ||
@@ -114,12 +116,12 @@ function game() {
     {
         if (userPoints === 5) 
         {
-            message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`
+            messageText.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`
         }
         userPoints++;
         avatarScore.textContent = `Avatar: ${userPoints}`;
         challengerScore.textContent = `Challenger: ${computerPoints}`;
-        message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
+        messageText.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
     } else if 
     ((computerChoice === 'Water' && userChoice === 'Fire') || 
     (computerChoice === 'Earth' && userChoice === 'Air') ||
