@@ -1,14 +1,17 @@
+let userChoice;
+let computerChoice = getComputerChoice();
+const water = document.getElementsByClassName('water-icon');
+const earth = document.getElementsByClassName('earth-icon');
+const fire = document.getElementsByClassName('fire-icon');
+const air = document.getElementsByClassName('air-icon');
 
+function getComputerChoice() { //Generate a randomly selected answer to Rock Paper Scissors
+    let options = ['water','earth', 'fire', 'air'];
+    let choice = options[Math.floor(Math.random()*options.length)];
+    return choice;
+}
 
 // Commented below is my JavaScript from my first attempt at creating and styling the Rock Paper Scissors project
-
-
-// function getComputerChoice() { //Generate a randomly selected answer to Rock Paper Scissors
-//     let options = ['rock','paper', 'scissors'];
-//     let choice = options[Math.floor(Math.random()*options.length)];
-//     return choice;
-// }
-
 // let userPoints = 0; //Create a variable to keep track of user points
 // let computerPoints = 0; //Create a variable to keep track of computer points
 // const container = document.querySelector('.container');
