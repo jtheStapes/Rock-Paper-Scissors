@@ -17,7 +17,6 @@ const avatarScore = document.createElement('div');
 const challengerScore = document.createElement('div');
 const challengerChoice = document.createElement('div');
 const message = document.createElement('div');
-const messageText = document.createElement('div');
 
 //Add class names to created divs
 userChoiceHolder.classList.add('userChoiceHolder');
@@ -29,13 +28,11 @@ choice.classList.add('choice');
 avatarChoice.classList.add('avatarChoice');
 challengerChoice.classList.add('challengerChoice');
 message.classList.add('message');
-messageText.classList.add('messageText');
 
 //Add children to parent divs
 body.appendChild(results);
 results.appendChild(message);
 results.appendChild(choice);
-message.appendChild(messageText);
 choice.appendChild(avatarChoice);
 choice.appendChild(challengerChoice);
 avatarChoice.appendChild(userChoiceHolder);
@@ -102,12 +99,35 @@ function getAvatarChoice(userChoice) {
             userChoiceHolder.textContent = '💨'
             userChoiceHolder.setAttribute('style', 'color: rgb(255, 255, 255); border: 5px solid rgb(255, 255, 255);');
             return userChoiceHolder;
-        }
+    }
+}
+
+function getChallengerChoice(computerChoice) {
+    switch (computerChoice) 
+    {
+        case('Water'):
+            computerChoiceHolder.textContent = '🌊'
+            computerChoiceHolder.setAttribute('style', 'color: rgb(24, 182, 255); border: 5px solid rgb(24, 182, 255);');
+            return computerChoiceHolder;
+        case('Earth'):
+            computerChoiceHolder.textContent = '⛰️'
+            computerChoiceHolder.setAttribute('style', 'color: rgb(185, 149, 115); border: 5px solid rgb(185, 149, 115);');
+            return computerChoiceHolder;
+        case('Fire'):
+            computerChoiceHolder.textContent = '🔥'
+            computerChoiceHolder.setAttribute('style', 'color: rgb(247, 107, 107); border: 5px solid rgb(247, 107, 107);');
+            return computerChoiceHolder;
+        case('Air'):
+            computerChoiceHolder.textContent = '💨'
+            computerChoiceHolder.setAttribute('style', 'color: rgb(255, 255, 255); border: 5px solid rgb(255, 255, 255);');
+            return computerChoiceHolder;
+    }
 }
 
 function game() {
     getAvatarChoice(userChoice);
-    messageText.textContent = '';
+    getChallengerChoice(computerChoice);
+    message.textContent = '';
     if 
     ((userChoice === 'Water' && computerChoice === 'Fire') || 
     (userChoice === 'Earth' && computerChoice === 'Air') ||
@@ -116,20 +136,31 @@ function game() {
     {
         if (userPoints === 5) 
         {
-            messageText.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`
+            message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`
         }
         userPoints++;
         avatarScore.textContent = `Avatar: ${userPoints}`;
         challengerScore.textContent = `Challenger: ${computerPoints}`;
-        messageText.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
+        message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the round!`
     } else if 
     ((computerChoice === 'Water' && userChoice === 'Fire') || 
     (computerChoice === 'Earth' && userChoice === 'Air') ||
     (computerChoice === 'Fire' && userChoice === 'Earth') ||
     (computerChoice === 'Air' && userChoice === 'Water'))
     {
-
-    }
+        if (computerPoints === 5) 
+        {
+            message.textContent = `${computerChoice} beats ${userChoice}. The Avatar has been defeated...`
+            message.textContent += `Play Again?`;
+        }
+        computerPoints++;
+        avatarScore.textContent = `Avatar: ${userPoints}`;
+        challengerScore.textContent = `Challenger: ${computerPoints}`;
+        message.textContent = `${computerChoice} beats ${userChoice}. The Avatar loses the round...`
+    } else 
+    {
+        message.textContent = `The Avatar has chosen ${userChoice} and the challengers
+            have chosen ${computerChoice}. The elements chosen are of equal strength. A draw.`;    }
 }
 
 // Commented below is my JavaScript from my first attempt at creating and styling the Rock Paper Scissors project
