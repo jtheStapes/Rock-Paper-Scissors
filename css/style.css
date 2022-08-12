@@ -29,15 +29,15 @@ body {
 }
 
 .water {
-    color: rgb(0, 68, 255);
+    color: rgb(24, 182, 255);
 }
 
 .earth {
-    color: rgb(80, 53, 28);
+    color: rgb(185, 149, 115);
 }
 
 .fire {
-    color: rgb(145, 18, 18);
+    color: rgb(247, 107, 107);
 }
 
 .air {
@@ -74,36 +74,36 @@ button {
 }
 
 .elements > .fire {
-    border: 5px solid rgb(145, 18, 18);
+    border: 5px solid rgb(247, 107, 107);
 }
 
 .elements > .fire:hover {
     transition: 0.5s;
     transform: scale(1.1);
-    background-color: rgb(252, 66, 66);
-    box-shadow: 0 0 50px rgba(145, 18, 18, .5);
+    background-color: rgb(165, 0, 0);
+    box-shadow: 0 0 50px rgba(247, 107, 107, .5);
 }
 
 .elements > .water {
-    border: 5px solid rgb(0, 68, 255);
+    border: 5px solid rgb(24, 182, 255);
 }
 
 .elements > .water:hover {
     transition: 0.5s;
     transform: scale(1.1);
-    background-color: rgb(18, 195, 240);
-    box-shadow: 0 0 50px rgba(0, 68, 255, .5);
+    background-color: rgb(0, 4, 255);
+    box-shadow: 0 0 50px rgba(24, 182, 255, .5);
 }
 
 .elements > .earth {
-    border: 5px solid rgb(80, 53, 28);
+    border: 5px solid rgb(185, 149, 115);
 }
 
 .elements > .earth:hover {
     transition: 0.5s;
     transform: scale(1.1);
-    background-color: rgb(158, 127, 91);
-    box-shadow: 0 0 50px rgba(80, 53, 28, .5);
+    background-color: rgb(66, 50, 32);
+    box-shadow: 0 0 50px rgba(161, 127, 94, 0.5);
 }
 
 .elements > .air {
