@@ -7,29 +7,27 @@ let water = document.querySelector('.water-icon');
 let earth = document.querySelector('.earth-icon');
 let fire = document.querySelector('.fire-icon');
 let air = document.querySelector('.air-icon');
-const userWaterChoiceSymbol = document.createElement('div');
-userWaterChoiceSymbol.textContent = '🌊';
-const userEarthChoiceSymbol = document.createElement('div');
-userEarthChoiceSymbol.textContent = '⛰️';
-const userFireChoiceSymbol = document.createElement('div');
-userFireChoiceSymbol.textContent = '🔥';
-const userAirChoiceSymbol = document.createElement('div');
-userAirChoiceSymbol.textContent = '💨';
+const userChoiceHolder = document.createElement('div');
+const computerChoiceHolder = document.createElement('div');
 const body = document.querySelector('.body');
 const results = document.createElement('div');
 const choice = document.createElement('div');
 const avatarChoice = document.createElement('div');
+const avatarScore = document.createElement('div');
+const challengerScore = document.createElement('div');
 const challengerChoice = document.createElement('div');
 const message = document.createElement('div');
 const winner = document.createElement('div');
 
 //Add class names to created divs
+userChoiceHolder.classList.add('userChoiceHolder');
+computerChoiceHolder.classList.add('computerChoiceHolder');
+avatarScore.classList.add('avatarScore');
+challengerScore.classList.add('challengerScore');
 results.classList.add('results');
 choice.classList.add('choice');
 avatarChoice.classList.add('avatarChoice');
-avatarChoice.textContent = `Avatar: ${userPoints}`;
 challengerChoice.classList.add('challengerChoice');
-challengerChoice.textContent = `Challengers: ${computerPoints}`;
 message.classList.add('message');
 winner.classList.add('winner');
 
@@ -40,6 +38,16 @@ results.appendChild(message);
 results.appendChild(choice);
 choice.appendChild(avatarChoice);
 choice.appendChild(challengerChoice);
+avatarChoice.appendChild(userChoiceHolder);
+avatarChoice.appendChild(avatarScore);
+userChoiceHolder.textContent = '❓';
+avatarScore.textContent = `Avatar: ${userPoints}`;
+//avatarChoice.textContent = `Avatar: ${userPoints}`;
+challengerChoice.appendChild(computerChoiceHolder);
+challengerChoice.appendChild(challengerScore);
+computerChoiceHolder.textContent = '❓';
+challengerScore.textContent = `Challengers: ${computerPoints}`;
+//challengerChoice.textContent = `Challengers: ${computerPoints}`;
 
 //Add event listeners to each button to record userChoice
 water.addEventListener('click', () => { 
