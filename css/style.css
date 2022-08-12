@@ -19,13 +19,6 @@ body {
     gap: 50px
 }
 
-/*
-.rules,
-.results {
-    flex: 1;
-}
-*/
-
 .rules {
     display: flex;
     flex-direction: column;
