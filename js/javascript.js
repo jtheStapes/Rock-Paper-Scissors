@@ -1,5 +1,4 @@
 //Variables and constants
-let playGame = true;
 let userChoice; //Holds the value for what the user chose for their element
 let computerChoice; //Holds the value for what the computer chose for their element
 let userPoints = 0;
@@ -72,14 +71,6 @@ air.addEventListener('click', () => {
     computerChoice = getComputerChoice();
     game();
 });
-
-if (playGame === false) 
-{
-    water.removeEventListener();
-    earth.removeEventListener();
-    fire.removeEventListener();
-    air.removeEventListener();
-}
 
 playAgain.addEventListener('click', () => {
     restartGame();
@@ -181,7 +172,7 @@ function game() { //Plays the game to 5 and outputs results after each round
     }
 }
 
-function restartGame() {
+function restartGame() { //Plays a new game
     userPoints = 0;
     computerPoints = 0;
     avatarScore.textContent = `Avatar: ${userPoints}`;
