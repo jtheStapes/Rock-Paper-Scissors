@@ -173,6 +173,10 @@ function game() { //Plays the game to 5 and outputs results after each round
 }
 
 function restartGame() { //Plays a new game
+    userChoiceHolder.textContent = '❓';
+    userChoiceHolder.setAttribute('style', 'color: white; border: 5px solid black;');
+    computerChoiceHolder.textContent = '❓';
+    computerChoiceHolder.setAttribute('style', 'color: white; border: 5px solid black;');
     userPoints = 0;
     computerPoints = 0;
     avatarScore.textContent = `Avatar: ${userPoints}`;
