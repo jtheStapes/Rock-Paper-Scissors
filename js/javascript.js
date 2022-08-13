@@ -1,4 +1,5 @@
 //Variables and constants
+let playGame = true;
 let userChoice; //Holds the value for what the user chose for their element
 let computerChoice; //Holds the value for what the computer chose for their element
 let userPoints = 0;
@@ -17,6 +18,7 @@ const avatarScore = document.createElement('div'); //Displays how many points th
 const challengerScore = document.createElement('div'); //Displays how many points the computer has underneath what they selected 
 const challengerChoice = document.createElement('div'); //Container for challengerScore and computerChoiceHolder
 const message = document.createElement('div'); //Outputs the outcome of the round and if a winner is declared
+const playAgain = document.createElement('button'); //Resets both scores and restarts the game
 
 //Add class names to created divs
 userChoiceHolder.classList.add('userChoiceHolder');
@@ -28,6 +30,7 @@ choice.classList.add('choice');
 avatarChoice.classList.add('avatarChoice');
 challengerChoice.classList.add('challengerChoice');
 message.classList.add('message');
+playAgain.classList.add('playAgain');
 
 //Add children to parent divs
 body.appendChild(results);
@@ -37,18 +40,22 @@ choice.appendChild(avatarChoice);
 choice.appendChild(challengerChoice);
 avatarChoice.appendChild(userChoiceHolder);
 avatarChoice.appendChild(avatarScore);
-userChoiceHolder.textContent = '❓';
-avatarScore.textContent = `Avatar: ${userPoints}`;
 challengerChoice.appendChild(computerChoiceHolder);
 challengerChoice.appendChild(challengerScore);
+
+//Add text to divs
+userChoiceHolder.textContent = '❓';
+avatarScore.textContent = `Avatar: ${userPoints}`;
 computerChoiceHolder.textContent = '❓';
 challengerScore.textContent = `Challengers: ${computerPoints}`;
+playAgain.textContent = 'Play Again?';
 
 //Add event listeners to each button
 water.addEventListener('click', () => {    
     userChoice = 'Water'; 
     computerChoice = getComputerChoice();
     game();
+    console.log(playGame);
 });
 earth.addEventListener('click', () => { 
     userChoice = 'Earth';
@@ -66,6 +73,18 @@ air.addEventListener('click', () => {
     game();
 });
 
+if (playGame === false) 
+{
+    water.removeEventListener();
+    earth.removeEventListener();
+    fire.removeEventListener();
+    air.removeEventListener();
+}
+
+playAgain.addEventListener('click', () => {
+    restartGame();
+    console.log(userPoints);
+})
 
 function getComputerChoice() { //Generate a randomly selected answer to Water Earth Fire Air
     let options = ['Water','Earth', 'Fire', 'Air'];
@@ -118,6 +137,7 @@ function getChallengerChoice(computerChoice) { //Outputs the computers choice ic
 }
 
 function game() { //Plays the game to 5 and outputs results after each round
+    if (computerPoints === 5 || userPoints === 5) { return; } 
     getAvatarChoice(userChoice);
     getChallengerChoice(computerChoice);
     message.textContent = '';
@@ -127,10 +147,6 @@ function game() { //Plays the game to 5 and outputs results after each round
     (userChoice === 'Fire' && computerChoice === 'Earth') ||
     (userChoice === 'Air' && computerChoice === 'Water')) 
     {
-        if (userPoints === 5) 
-        {
-            message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`
-        }
         userPoints++;
         avatarScore.textContent = `Avatar: ${userPoints}`;
         challengerScore.textContent = `Challenger: ${computerPoints}`;
@@ -141,11 +157,6 @@ function game() { //Plays the game to 5 and outputs results after each round
     (computerChoice === 'Fire' && userChoice === 'Earth') ||
     (computerChoice === 'Air' && userChoice === 'Water'))
     {
-        if (computerPoints === 5) 
-        {
-            message.textContent = `${computerChoice} beats ${userChoice}. The Avatar has been defeated...`
-            message.textContent += `Play Again?`;
-        }
         computerPoints++;
         avatarScore.textContent = `Avatar: ${userPoints}`;
         challengerScore.textContent = `Challenger: ${computerPoints}`;
@@ -153,5 +164,27 @@ function game() { //Plays the game to 5 and outputs results after each round
     } else 
     {
         message.textContent = `The Avatar has chosen ${userChoice} and the challengers
-            have chosen ${computerChoice}. The elements chosen are of equal strength. A draw.`;    }
+        have chosen ${computerChoice}. The elements chosen are of equal strength. A draw.`;    
+    }
+    if (computerPoints === 5) 
+    {
+        avatarScore.textContent = `Avatar: ${userPoints}`;
+        challengerScore.textContent = `Challenger: ${computerPoints}`;   
+        message.textContent = `${computerChoice} beats ${userChoice}. The Avatar has been defeated...`;
+        message.appendChild(playAgain);
+    } else if (userPoints === 5) 
+    {
+        avatarScore.textContent = `Avatar: ${userPoints}`;
+        challengerScore.textContent = `Challenger: ${computerPoints}`;   
+        message.textContent = `${userChoice} beats ${computerChoice}. The Avatar wins the game!`;
+        message.appendChild(playAgain);
+    }
+}
+
+function restartGame() {
+    userPoints = 0;
+    computerPoints = 0;
+    avatarScore.textContent = `Avatar: ${userPoints}`;
+    challengerScore.textContent = `Challenger: ${computerPoints}`;
+    message.textContent = '';
 }
