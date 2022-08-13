@@ -174,98 +174,13 @@ button {
 }
 
 .playAgain {
-    font-size: 30px;
+    font-size: 36px;
     padding: 10px;
-    border: 5px solid black;
+    color: white;
+    border: 5px solid white;
 }
 
 .playAgain:hover {
     transition: 0.2s;
     transform: scale(1.1);
-    background-color: white;
 }
-
-/*
-***Commented below is my CSS from my first attempt at creating and styling the Rock Paper Scissors project***
-.body {
-    background-color: rgb(31, 52, 70);
-    flex: 1;
-}
-
-
-
-h1, .rules, .scores, .choice, .winner {
-    color: rgb(228, 198, 230);
-    
-}
-
-h1 {
-    margin-top: auto;
-    font-family: fantasy;
-    font-size: 125px;
-    padding: 50px;
-    text-align: center;
-    background-color: rgb(53, 52, 52);
-}
-
-.scores {
-    display: flex;
-    justify-content: center;
-}
-
-.userScore, .computerScore {
-    display: flex;
-    margin: 100px;
-}
-
-.choice, .winner {
-    display: flex;
-    justify-content: center;
-}
-
-.rules {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 75px;
-    margin-bottom: 100px;
-}
-
-.rules-info {
-    font-size: 36px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-
-.container {
-    display: flex;
-    font-size: 28px;
-    flex: 1;
-    justify-content: center;
-}
-
-.icons {
-    background-color: rgb(31, 52, 70);
-    flex: 1;
-    color: rgb(103, 70, 134);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-top: 100px;
-}
-
-.rock, .paper, .scissors {
-    font-size: 150px;
-    background-color: rgb(235, 235, 139);
-    display: flex;
-    border: 2px solid rgb(218, 150, 150);
-    border-radius: 25px;
-    padding: 16px;
-    
-}
-*/
