@@ -4,3 +4,5 @@ Update: My Rock Paper Scissors game now has a UI that has buttons to click for u
 
 Update 08/12/2022: My Rock Paper Scissors game was completely remade into a new game called "Water Earth Fire Air" based on the popular animated TV show "Avatar: The Last Airbender"
 This revamp was so much fun and I learned so much and definitely improved as a programmer when I was finished with this project. Please enjoy!
+
+LIVE DEMO -> https://jthestapes.github.io/Rock-Paper-Scissors/ 
